@@ -23,3 +23,29 @@ body {
     margin-right: auto;
     margin-left: auto;
   }
+  /*Header styling */
+  .weather-header {
+  background-color: mediumslateblue; /* Multi-colour background color */
+}
+
+.weather-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+/* Form & search button styling */
+.form {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 70%;
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 5px;
+  padding: 8px;
+}
+.search-button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: 1px solid #007bff; /* Button border color */
+    border-radius: 5px;
+  }
