@@ -14,3 +14,9 @@ searchForm.on("submit", function(event) {
     }
   });
 
+historyList.on("click", "button", function() {
+    const cityName = $(this).data("city"); 
+    if (cityName) {
+        fetchGeocoding(cityName); 
+    }
+}); 
