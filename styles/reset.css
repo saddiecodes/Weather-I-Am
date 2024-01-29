@@ -1,51 +1,111 @@
-/* Reset some default styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
 body {
     font-family: 'Arial', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #333;
+    background-color: #f8f9fa; /* Background color */
   }
-
-.container-fluid {
+  
+  .container-fluid {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
   }
-  /*Header styling */
+  
+  /* Header Styles */
   .weather-header {
-  background-color: mediumslateblue; /* Multi-colour background color */
-}
-
-.weather-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0;
-}
-/* Form & search button styling */
-.form {
-  margin-bottom: 20px;
-}
-
-.form-input {
-  width: 70%;
-  border: 1px solid #ced4da; /* Border color */
-  border-radius: 5px;
-  padding: 8px;
-}
-.search-button {
+    background-color: lightsteelblue; /* Dark background color */
+    color: #fff; /* Text color */
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .weather-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  
+  /* Form Styles */
+  .form {
+    margin-bottom: 20px;
+  }
+  
+  .form-input {
+    width: 70%;
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  .search-button {
     background-color: #007bff; /* Button background color */
     color: #fff; /* Button text color */
     border: 1px solid #007bff; /* Button border color */
     border-radius: 5px;
+    cursor: pointer;
   }
+  
+  /* History List Styles */
+  .list-group {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .list-group-item {
+    cursor: pointer;
+  }
+  
+  /* Current Weather Styles */
+  #today {
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  /* Forecast Styles */
+  #forecast {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .forecast-item {
+    border: 1px solid #ced4da; /* Border color */
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: calc(20% - 20px); /* Adjust based on your layout */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 767px) {
+    .form-input {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    #forecast .forecast-item {
+      width: calc(50% - 20px); /* Adjust based on your layout */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .form-input {
+      width: 60%;
+      margin-right: 10px;
+    }
+  }
+  
+  
+
+
+  
