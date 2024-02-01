@@ -40,11 +40,21 @@ $(document).ready(function () {
       url: weatherDataUrl,
       method: "GET",
     }).then(function(response) {
-      console.log(response)
+      displayCurrentWeather(response) 
+  
 
     });
     }
-    //rest of code added here
+    function displayCurrentWeather(data) {
+      console.log(data)
+      let todaysWeatherElement = document.querySelector("#today")
+      todaysWeatherElement.innerHTML = "" 
+      console.log(todaysWeatherElement)
+      let cityTitle = document.createElement("h1")
+      cityTitle.textContent = data.city.name 
+      todaysWeatherElement.appendChild(cityTitle)
+    }
+    //current wind, humidity 
   });
      
       
