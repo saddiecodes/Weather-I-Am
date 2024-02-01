@@ -20,19 +20,31 @@ $(document).ready(function () {
         fetchGeocoding(cityName);
       }
     });
+    function fetchGeocoding(cityName) {
+      const geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
+      $.ajax({
+        url: geocodingUrl,
+        method: "GET",
+      }).then(function(geoResponse) {
+        console.log(geoResponse)
+        if (geoResponse.length > 0) {
+          const { lat, lon } = geoResponse[0];
+          // Fetch current weather data using latitude and longitude
+        weatherData(lat, lon)  
+        }
+      });
+    }
+    function weatherData(lat, lon) {
+    const weatherDataUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`; 
+    $.ajax({
+      url: weatherDataUrl,
+      method: "GET",
+    }).then(function(response) {
+      console.log(response)
+
+    });
+    }
+    //rest of code added here
   });
-      function fetchGeocoding(cityName) {
-        const geocodingUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
-    
-        $.ajax({
-          url: geocodingUrl,
-          method: "GET",
-        }).then(function(geoResponse) {
-          if (geoResponse.length > 0) {
-            const { lat, lon } = geoResponse[0];
-            // Fetch current weather data using latitude and longitude
-            fetchWeatherData(lat, lon, cityName);
-          }
-        });
-      }
+     
       
