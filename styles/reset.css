@@ -144,6 +144,35 @@ body {
       margin-right: 10px;
   }
 }
+/* City Selection Button Styles */
+.city-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-button {
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.city-button:hover {
+  background-color: #0056b3;
+}
+/* CSS for temperature display */
+.temperature {
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-weight: bold; /* Make the temperature text bold */
+  color: #007bff; /* Set the temperature text color */
+}
+
+
 
   
 

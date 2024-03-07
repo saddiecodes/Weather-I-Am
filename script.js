@@ -7,16 +7,16 @@ const historyList = $("#history");
  const todaysWeatherElement = $("#today")
 const futureWeatherContainer = $("#forecast");
 $(document).ready(function () { 
-    // const apiKey = "ee3ada3a53770308ef9a35a3b65b0744";
-    // const apiUrl = "https://api.openweathermap.org/data/2.5/";
-    // const searchForm = $("#search-form");
-    // const searchInput = $("#search-input");
-    // const historyList = $("#history"); 
-    // const todaysWeatherElement = $("#today")
-    // const futureWeatherContainer = $("#forecast");
 
+//Function to handle city button clicks 
+  $(".city-button").on("click", function() {
+      const cityName = $(this).data("city");
+      if (cityName) {
+          // Fetch weather data for the selected city
+          fetchGeocoding(cityName);
+      }
+  });
 
-  
     searchForm.on("submit", function (event) {
       event.preventDefault();
       const cityName = searchInput.val().trim();
@@ -75,6 +75,7 @@ $(document).ready(function () {
       //Temperature
       let tempNow = document.createElement("h1")
       tempNow.textContent = data.list[0].main.temp
+      tempNow.classList.add("temperature");
       todaysWeatherElement.append(tempNow)
       //Date
       let dateNow = document.createElement("h1")
@@ -86,7 +87,6 @@ $(document).ready(function () {
   function displayFutureWeather (data) {
     console.log(data)
     var days=[3,10,17,24,31] 
-    
     
         for (let index = 0; index < days.length; index++) {
             const element = days[index];
@@ -119,9 +119,6 @@ $(document).ready(function () {
     }
     
 }); 
-
-  
-// // Set global variables, including Open Weather Maps API Key
 
 
 
