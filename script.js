@@ -68,11 +68,11 @@ $(document).ready(function () {
       let windSpeed = document.createElement("h1")
       windSpeed.textContent = data.list[0].wind.speed
       todaysWeatherElement.append(windSpeed) 
-      //Humditiy
+      // //Humditiy
       let humidityShow = document.createElement("h1")
       humidityShow.textContent = data.list[0].main.humidity
       todaysWeatherElement.append(humidityShow)
-      //Temperature
+      // //Temperature
       let tempNow = document.createElement("h1")
       tempNow.textContent = data.list[0].main.temp
       tempNow.classList.add("temperature");
