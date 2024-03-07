@@ -104,7 +104,47 @@ body {
       margin-right: 10px;
     }
   }
-  
+  /* City Selection Button Styles */
+.city-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.city-button {
+  margin-bottom: 10px;
+}
+
+/* Date Format */
+.card-title {
+  margin-bottom: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .form-input {
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  #forecast .forecast-item {
+      width: calc(50% - 20px); /* Adjust based on your layout */
+  }
+}
+
+@media (min-width: 768px) {
+  .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .form-input {
+      width: 60%;
+      margin-right: 10px;
+  }
+}
+
   
 
 

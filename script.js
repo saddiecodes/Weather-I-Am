@@ -86,15 +86,7 @@ $(document).ready(function () {
   function displayFutureWeather (data) {
     console.log(data)
     var days=[3,10,17,24,31] 
-    for (let index = 0; index < days.length; index++) {
-      const element = days[index];
-      
-      // //Add other elements to show on page
-      // function displayFutureWeather(data) {
-      //   console.log(data);
-      //   var days = [3, 10, 17, 24, 31];
-      //   var futureWeatherContainer = $("#forecast");
-      //   futureWeatherContainer.empty();
+    
     
         for (let index = 0; index < days.length; index++) {
             const element = days[index];
@@ -126,7 +118,6 @@ $(document).ready(function () {
         }
     }
     
-}
 }); 
 
   
