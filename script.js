@@ -4,13 +4,17 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/";
 const searchForm = $("#search-form");
 const searchInput = $("#search-input");
 const historyList = $("#history");
+ const todaysWeatherElement = $("#today")
+const futureWeatherContainer = $("#forecast");
 $(document).ready(function () { 
-    const apiKey = "ee3ada3a53770308ef9a35a3b65b0744";
-    const apiUrl = "https://api.openweathermap.org/data/2.5/";
-    const searchForm = $("#search-form");
-    const searchInput = $("#search-input");
-    const historyList = $("#history"); 
-    const todaysWeatherElement = $("#today")
+    // const apiKey = "ee3ada3a53770308ef9a35a3b65b0744";
+    // const apiUrl = "https://api.openweathermap.org/data/2.5/";
+    // const searchForm = $("#search-form");
+    // const searchInput = $("#search-input");
+    // const historyList = $("#history"); 
+    // const todaysWeatherElement = $("#today")
+    // const futureWeatherContainer = $("#forecast");
+
 
   
     searchForm.on("submit", function (event) {
@@ -59,23 +63,23 @@ $(document).ready(function () {
       console.log(todaysWeatherElement)
       let cityTitle = document.createElement("h1")
       cityTitle.textContent = data.city.name 
-      todaysWeatherElement.appendChild(cityTitle)
+      todaysWeatherElement.append(cityTitle)
       //Wind speed 
       let windSpeed = document.createElement("h1")
       windSpeed.textContent = data.list[0].wind.speed
-      todaysWeatherElement.appendChild(windSpeed) 
+      todaysWeatherElement.append(windSpeed) 
       //Humditiy
       let humidityShow = document.createElement("h1")
       humidityShow.textContent = data.list[0].main.humidity
-      todaysWeatherElement.appendChild(humidityShow)
+      todaysWeatherElement.append(humidityShow)
       //Temperature
       let tempNow = document.createElement("h1")
       tempNow.textContent = data.list[0].main.temp
-      todaysWeatherElement.appendChild(tempNow)
+      todaysWeatherElement.append(tempNow)
       //Date
       let dateNow = document.createElement("h1")
       dateNow.textContent = data.list[0].dt_txt
-      todaysWeatherElement.appendChild(dateNow)
+      todaysWeatherElement.append(dateNow)
       displayFutureWeather(data)
     }
   // Future weather
@@ -99,7 +103,7 @@ $(document).ready(function () {
             //Wind Speed
             let windSpeed = document.createElement("h1")
              windSpeed.textContent = data.list[element].wind.speed
-             todaysWeatherElement.appendChild(windSpeed) 
+             todaysWeatherElement.append(windSpeed) 
     
             // Date
             let date = $("<h5>").addClass("card-title").text(new Date(data.list[element].dt * 1000).toLocaleDateString());
@@ -126,7 +130,7 @@ $(document).ready(function () {
 }); 
 
   
-// Set global variables, including Open Weather Maps API Key
+// // Set global variables, including Open Weather Maps API Key
 
 
 
