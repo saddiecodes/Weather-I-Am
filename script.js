@@ -4,12 +4,14 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/";
 const searchForm = $("#search-form");
 const searchInput = $("#search-input");
 const historyList = $("#history");
-$(document).ready(function () {
+$(document).ready(function () { 
     const apiKey = "ee3ada3a53770308ef9a35a3b65b0744";
     const apiUrl = "https://api.openweathermap.org/data/2.5/";
     const searchForm = $("#search-form");
     const searchInput = $("#search-input");
-    const historyList = $("#history");
+    const historyList = $("#history"); 
+    const todaysWeatherElement = $("#today")
+
   
     searchForm.on("submit", function (event) {
       event.preventDefault();
@@ -53,7 +55,6 @@ $(document).ready(function () {
     }
     function displayCurrentWeather(data) {
       console.log(data)
-      let todaysWeatherElement = document.querySelector("#today")
       todaysWeatherElement.innerHTML = "" 
       console.log(todaysWeatherElement)
       let cityTitle = document.createElement("h1")
@@ -121,7 +122,9 @@ $(document).ready(function () {
         }
     }
     
-    }
+}
+}); 
+
   
 // Set global variables, including Open Weather Maps API Key
 
