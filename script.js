@@ -83,16 +83,46 @@ $(document).ready(function () {
     var days=[3,10,17,24,31] 
     for (let index = 0; index < days.length; index++) {
       const element = days[index];
-      //Wind Speed
-      let windSpeed = document.createElement("h1")
-      windSpeed.textContent = data.list[element].wind.speed
-      todaysWeatherElement.appendChild(windSpeed) 
-      //Add other elements to show on page
       
+      // //Add other elements to show on page
+      // function displayFutureWeather(data) {
+      //   console.log(data);
+      //   var days = [3, 10, 17, 24, 31];
+      //   var futureWeatherContainer = $("#forecast");
+      //   futureWeatherContainer.empty();
+    
+        for (let index = 0; index < days.length; index++) {
+            const element = days[index];
+            // Create a new card for each day's forecast
+            let card = $("<div>").addClass("col-lg-2 card mx-2");
+            //Wind Speed
+            let windSpeed = document.createElement("h1")
+             windSpeed.textContent = data.list[element].wind.speed
+             todaysWeatherElement.appendChild(windSpeed) 
+    
+            // Date
+            let date = $("<h5>").addClass("card-title").text(new Date(data.list[element].dt * 1000).toLocaleDateString());
+            card.append(date);
+    
+            // Weather icon
+            let icon = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[element].weather[0].icon + ".png");
+            card.append(icon);
+    
+            // Temperature
+            let temperature = $("<p>").addClass("card-text").text("Temperature: " + (data.list[element].main.temp - 273.15).toFixed(2) + "°C");
+            card.append(temperature);
+    
+            // Humidity
+            let humidity = $("<p>").addClass("card-text").text("Humidity: " + data.list[element].main.humidity + "%");
+            card.append(humidity);
+  
+            // Append the card to the container
+            futureWeatherContainer.append(card);
+        }
     }
-
-  }
-  });
+    
+    }
+  
 // Set global variables, including Open Weather Maps API Key
 
 
