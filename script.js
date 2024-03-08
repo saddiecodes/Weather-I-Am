@@ -102,11 +102,12 @@ $(document).ready(function () {
             card.append(date);
     
             // Weather icon
-            let icon = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[element].weather[0].icon + ".png");
+            let icon = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[element].weather[0].icon + ".png");
             card.append(icon);
     
             // Temperature
-            let temperature = $("<p>").addClass("card-text").text("Temperature: " + (data.list[element].main.temp - 273.15).toFixed(2) + "°C");
+        
+            let temperature = $("<p>").addClass("card-text").text("Temperature: " + (data.list[element].main.temp - 1 ).toFixed(2) + "°C");
             card.append(temperature);
     
             // Humidity
@@ -119,6 +120,16 @@ $(document).ready(function () {
     }
     
 }); 
+
+
+
+     
+      
+
+
+
+     
+      
 
 
 
