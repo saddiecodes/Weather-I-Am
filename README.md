@@ -10,7 +10,7 @@ Current Weather Display: Shows the current weather conditions including temperat
 Future Weather Forecast: Displays the weather forecast for the next five days, including temperature, weather icons, and additional details.
 City Selection Buttons: Provides predefined city selection buttons (e.g., London, Berlin, Barcelona) for quick access to weather information.
 Responsive Design: The application is responsive and works well on various screen sizes, from desktops to mobile devices.
-Sleek Styling: Utilizes sleek and modern styling to enhance user experience and visual appeal.
+Sleek Styling: Utilises sleek and modern styling to enhance user experience and visual appeal.
 ## Usage
 
 Enter the name of the city you want to check the weather for in the search input field.
