@@ -95,7 +95,7 @@ $(document).ready(function () {
             //Wind Speed
             let windSpeed = document.createElement("h1")
              windSpeed.textContent = data.list[element].wind.speed
-             todaysWeatherElement.append(windSpeed) 
+             card.append(windSpeed);
     
             // Date
             let date = $("<h5>").addClass("card-title").text(new Date(data.list[element].dt * 1000).toLocaleDateString());
