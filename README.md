@@ -31,3 +31,5 @@ Start exploring the weather forecast for different cities!
 
 ## Credits
 This weather application was created by [Hannah Barrie]. It utilises data from the OpenWeatherMap API.
+
+![Screenshot 2024-03-08 at 20 18 27](https://github.com/saddiecodes/Weather-I-Am/assets/151469708/eecff0d8-5038-4912-9158-519aae4595fe)
