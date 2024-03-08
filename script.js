@@ -67,21 +67,32 @@ $(document).ready(function () {
       //Wind speed 
       let windSpeed = document.createElement("h1")
       windSpeed.textContent = data.list[0].wind.speed
-      todaysWeatherElement.append(windSpeed) 
+      todaysWeatherElement.append(windSpeed)
+      let windSpeedLabel = $("<p>").addClass("card-text label").text("Wind Speed:"+ data.list[0].wind.speed +  " m/s");
+      todaysWeatherElement.append(windSpeedLabel, windSpeed);
       // //Humditiy
       let humidityShow = document.createElement("h1")
       humidityShow.textContent = data.list[0].main.humidity
       todaysWeatherElement.append(humidityShow)
+      let humidityLabel = $("<p>").addClass("card-text label").text("Humidity:");
+      let humidity = $("<p>").addClass("card-text").text("Humidity: " + data.list[0].main.humidity + "%");
+      todaysWeatherElement.append(humidityLabel, humidity);
       // //Temperature
       let tempNow = document.createElement("h1")
       tempNow.textContent = data.list[0].main.temp
       tempNow.classList.add("temperature");
       todaysWeatherElement.append(tempNow)
+      let tempLabel = $("<p>").addClass("card-text label").text("Temperature:");
+      let temperature = $("<p>").addClass("card-text").text("Temperature: " + (data.list[0].main.temp - 1).toFixed(2) + "°C");
+      todaysWeatherElement.append(tempLabel, temperature);
       //Date
       let dateNow = document.createElement("h1")
       dateNow.textContent = data.list[0].dt_txt
       todaysWeatherElement.append(dateNow)
       displayFutureWeather(data)
+      let dateLabel = $("<p>").addClass("card-text label").text("Date:");
+      let date = $("<p>").addClass("card-text").text(new Date(data.list[0].dt * 1000).toLocaleDateString());
+      todaysWeatherElement.append(dateLabel, date);
     }
   // Future weather
   function displayFutureWeather (data) {
